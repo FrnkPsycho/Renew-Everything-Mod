@@ -1,29 +1,35 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "reneweverything",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Renew Everything Mod",
+  "description": "i don't like Ex Nihilo so i made another Ex Nihilo-like mod.",
   "authors": [
-    "Me!"
+    "FrnkPsycho"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/FrnkPsycho/Renew-Everything-Mod",
+    "sources": "https://github.com/FrnkPsycho/Renew-Everything-Mod"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT",
+  "icon": "assets/reneweverything/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "net.frnks.reneweverything.RenewEverythingMod"
+    ],
+    "fabric-datagen": [
+      "net.frnks.reneweverything.ModDataGenerator"
+    ],
+    "client": [
+      "net.frnks.reneweverything.RenewEverythingModClient"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "reneweverything.mixins.json"
   ],
 
   "depends": {
