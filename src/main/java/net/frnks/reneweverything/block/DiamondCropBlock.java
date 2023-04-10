@@ -46,7 +46,7 @@ public class DiamondCropBlock extends CropBlock {
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        return !world.isSkyVisible(pos) && world.getBlockState(pos.down()).isOf(Blocks.DIAMOND_BLOCK);
+        return !world.isSkyVisible(pos) && (world.getBlockState(pos.down()).isOf(Blocks.DIAMOND_BLOCK) || world.getBlockState(pos.down()).isOf(Blocks.FARMLAND));
     }
 
     @Override
@@ -66,6 +66,7 @@ public class DiamondCropBlock extends CropBlock {
         int speed = 10;
         // Speed up when light level belows or equals 7 which is hostile mobs' max spawn level.
         speed -= lightLevel <= 7 ? 2 : 0;
+        if (world.getBlockState(pos.down()).isOf(Blocks.FARMLAND)) speed += 5;
 
         if ((i = this.getAge(state)) < this.getMaxAge() &&
                 random.nextInt(speed) == 0) {

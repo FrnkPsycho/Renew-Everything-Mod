@@ -5,6 +5,7 @@ import com.mojang.brigadier.ParseResults;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.frnks.reneweverything.RenewEverythingMod;
+import net.frnks.reneweverything.loot.ModLootGenerator;
 import net.minecraft.data.server.loottable.LootTableProvider;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -32,7 +33,7 @@ public class DirtSnack extends Item {
 
     @Override
     public int getMaxUseTime(ItemStack stack) {
-        return 10;
+        return 5;
     }
 
     @Override
@@ -51,20 +52,15 @@ public class DirtSnack extends Item {
 //                player.damage(ModDamageSources.DIRT_SNACK, 1f);
             }
 
-            MinecraftServer server = world.getServer();
-            CommandManager commandManager = server.getCommandManager();
-            LootManager lootManager = server.getLootManager();
-            LootTable lootTable = lootManager.getTable(new Identifier(RenewEverythingMod.MOD_ID, "snacks/dirt_snack_loot"));
-            LootContext.Builder builder = new LootContext.Builder(server.getOverworld())
-                    .optionalParameter(LootContextParameters.THIS_ENTITY, player)
-                    .parameter(LootContextParameters.ORIGIN, player.getPos());
-            ObjectArrayList<ItemStack> itemStacks = lootTable.generateLoot(builder.build(LootContextTypes.CHEST));
-            if ( !itemStacks.isEmpty() ) {
-                ItemStack itemStack = itemStacks.get(0);
+            if ( !world.isClient ) {
+                MinecraftServer server = world.getServer();
+                CommandManager commandManager = server.getCommandManager();
+                LootManager lootManager = server.getLootManager();
+                LootTable lootTable = lootManager.getTable(new Identifier(RenewEverythingMod.MOD_ID, "snacks/dirt_snack_loot"));
+                ItemStack itemStack = ModLootGenerator.generateLootFromLootTable(lootTable, server);
                 player.giveItemStack(itemStack);
             }
-//            world.getServer().getCommandManager().executeWithPrefix(world.getServer().getCommandSource().withEntity(player), "/loot "+player.getName());
-//            commandManager.executeWithPrefix(server.getCommandSource().withEntity(player))
+
         }
         /* TODO give player seed item based on the loot table or else. */
         return super.finishUsing(stack, world, user);

@@ -1,29 +1,19 @@
 package net.frnks.reneweverything.block;
 
 import net.frnks.reneweverything.item.ModItems;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.CropBlock;
 import net.minecraft.item.ItemConvertible;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldView;
 
-public class IronCropBlock extends CropBlock {
-//    private static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{
-//            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
-//            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D),
-//            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
-//            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 5.0D, 16.0D),
-//            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
-//            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D),
-//            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
-//            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D)
-//    };
+public class CopperCropBlock extends CropBlock {
 
-    public IronCropBlock(Settings settings) {
+    public CopperCropBlock(Settings settings) {
         super(settings);
     }
 
@@ -34,7 +24,7 @@ public class IronCropBlock extends CropBlock {
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        return !world.isSkyVisible(pos) && (world.getBlockState(pos.down()).isOf(Blocks.IRON_BLOCK) || world.getBlockState(pos.down()).isOf(Blocks.FARMLAND));
+        return !world.isSkyVisible(pos) && (world.getBlockState(pos.down()).isOf(Blocks.COPPER_BLOCK) || world.getBlockState(pos.down()).isOf(Blocks.FARMLAND));
     }
 
     @Override
@@ -42,7 +32,7 @@ public class IronCropBlock extends CropBlock {
         int i;
         int lightLevel = world.getBaseLightLevel(pos, 0);
 
-        int speed = 5;
+        int speed = 3;
         // Speed up when light level belows or equals 7 which is hostile mobs' max spawn level.
         speed -= lightLevel <= 7 ? 2 : 0;
         if (world.getBlockState(pos.down()).isOf(Blocks.FARMLAND)) speed += 5;

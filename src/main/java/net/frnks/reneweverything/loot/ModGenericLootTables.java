@@ -13,7 +13,6 @@ import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.condition.LootCondition;
-import net.minecraft.loot.context.LootContextType;
 import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
@@ -25,8 +24,8 @@ import net.minecraft.util.Identifier;
 
 import java.util.function.BiConsumer;
 
-public class OreCropLootTables extends SimpleFabricLootTableProvider {
-    public OreCropLootTables(FabricDataOutput output) {
+public class ModGenericLootTables extends SimpleFabricLootTableProvider {
+    public ModGenericLootTables(FabricDataOutput output) {
         super(output, LootContextTypes.GENERIC);
     }
     @Override
@@ -34,17 +33,30 @@ public class OreCropLootTables extends SimpleFabricLootTableProvider {
         identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "snacks/dirt_snack_loot"), LootTable.builder()
                 .pool(LootPool.builder()
                         .with(ItemEntry.builder(Items.DEAD_BUSH).weight(1))
-                        .with(ItemEntry.builder(Items.OAK_SAPLING).weight(10))
-                        .with(ItemEntry.builder(Items.SPRUCE_SAPLING).weight(2))
-                        .with(ItemEntry.builder(Items.BIRCH_SAPLING).weight(10))
-                        .with(ItemEntry.builder(Items.ACACIA_SAPLING).weight(10))
-                        .with(ItemEntry.builder(Items.JUNGLE_SAPLING).weight(2))
-                        .with(ItemEntry.builder(Items.DARK_OAK_SAPLING).weight(2))
+                        .with(ItemEntry.builder(Items.OAK_SAPLING).weight(100))
+                        .with(ItemEntry.builder(Items.SPRUCE_SAPLING).weight(10))
+                        .with(ItemEntry.builder(Items.BIRCH_SAPLING).weight(100))
+                        .with(ItemEntry.builder(Items.ACACIA_SAPLING).weight(100))
+                        .with(ItemEntry.builder(Items.JUNGLE_SAPLING).weight(10))
+                        .with(ItemEntry.builder(Items.DARK_OAK_SAPLING).weight(10))
                                 // TODO more drops from dirt snack
+                )
+        );
+        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "snacks/rock_snack_loot"), LootTable.builder()
+                .pool(LootPool.builder()
+                        .with(ItemEntry.builder(ModItems.COAL_SEEDS).weight(200))
+                        .with(ItemEntry.builder(ModItems.IRON_SEEDS).weight(100))
+                        .with(ItemEntry.builder(ModItems.COPPER_SEEDS).weight(100))
+                        .with(ItemEntry.builder(ModItems.GOLD_SEEDS).weight(50))
+                        .with(ItemEntry.builder(ModItems.DIAMOND_SEEDS).weight(10))
+                        // TODO more drops from rock snack
                 )
         );
         identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "crops/iron_crop_loot"),
                 OreCropDrops(ModBlocks.IRON_CROP_BLOCK, Items.IRON_NUGGET, ModItems.IRON_SEEDS, 1, 3));
+
+        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "crops/copper_crop_loot"),
+                OreCropDrops(ModBlocks.COPPER_CROP_BLOCK, ModItems.COPPER_NUGGET, ModItems.COPPER_SEEDS, 2, 5));
 
         identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "crops/gold_crop_loot"),
                 OreCropDrops(ModBlocks.GOLD_CROP_BLOCK, Items.GOLD_NUGGET, ModItems.GOLD_SEEDS, 1,3));

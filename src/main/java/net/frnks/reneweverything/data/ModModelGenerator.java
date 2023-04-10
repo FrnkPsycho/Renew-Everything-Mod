@@ -23,6 +23,7 @@ public class ModModelGenerator extends FabricModelProvider {
         blockStateModelGenerator.registerCrop(ModBlocks.GOLD_CROP_BLOCK, Properties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
         blockStateModelGenerator.registerCrop(ModBlocks.DIAMOND_CROP_BLOCK, Properties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
         blockStateModelGenerator.registerCrop(ModBlocks.NETHERITE_CROP_BLOCK, Properties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
+        blockStateModelGenerator.registerCrop(ModBlocks.COPPER_CROP_BLOCK, Properties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
 
     }
 
@@ -30,6 +31,7 @@ public class ModModelGenerator extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.DIRT_SNACK, Models.GENERATED);
         itemModelGenerator.register(ModItems.ROCK_SNACK, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COPPER_NUGGET, Models.GENERATED);
 //        itemModelGenerator.register(ModItems.IRON_SEEDS, Models.GENERATED);
 
     }
