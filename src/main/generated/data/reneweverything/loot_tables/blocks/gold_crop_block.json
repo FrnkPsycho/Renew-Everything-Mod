@@ -16,7 +16,7 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "block": "reneweverything:iron_crop_block",
+                  "block": "reneweverything:gold_crop_block",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "age": "7"
@@ -34,11 +34,11 @@
                   "function": "minecraft:set_count"
                 }
               ],
-              "name": "minecraft:iron_nugget"
+              "name": "minecraft:gold_nugget"
             },
             {
               "type": "minecraft:item",
-              "name": "reneweverything:iron_seeds"
+              "name": "reneweverything:gold_seeds"
             }
           ]
         }
@@ -49,7 +49,7 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "reneweverything:iron_crop_block",
+          "block": "reneweverything:gold_crop_block",
           "condition": "minecraft:block_state_property",
           "properties": {
             "age": "7"
@@ -79,7 +79,7 @@
               }
             }
           ],
-          "name": "reneweverything:iron_seeds"
+          "name": "reneweverything:gold_seeds"
         }
       ],
       "rolls": 1.0

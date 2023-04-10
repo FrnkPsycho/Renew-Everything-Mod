@@ -2,16 +2,21 @@ package net.frnks.reneweverything.block;
 
 import net.frnks.reneweverything.item.ModItems;
 import net.minecraft.block.*;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemConvertible;
-import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
-public class IronCropBlock extends CropBlock {
+public class NetheriteCropBlock extends CropBlock {
     private static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D),
@@ -23,34 +28,36 @@ public class IronCropBlock extends CropBlock {
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D)
     };
 
-    public IronCropBlock(Settings settings) {
+    public NetheriteCropBlock(Settings settings) {
         super(settings);
     }
 
     @Override
     protected ItemConvertible getSeedsItem() {
-        return ModItems.IRON_SEEDS;
+        return ModItems.NETHERITE_SEEDS;
     }
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return AGE_TO_SHAPE[state.get(this.getAgeProperty())];
     }
-
-//    @Override
-//    public boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-//        return floor.isOf(Blocks.IRON_BLOCK) && ;
-//    }
-
-    //    @Override
-//    public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
-//        int lightLevel = world.getBaseLightLevel(pos, 0);
-//        System.out.println(pos + ": " + lightLevel);
-//        return lightLevel < 10;
-//    }
-//    @Override
+    @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        return !world.isSkyVisible(pos) && world.getBlockState(pos.down()).isOf(Blocks.IRON_BLOCK);
+        return !world.isSkyVisible(pos) && (world.getBlockState(pos.down()).isOf(Blocks.ANCIENT_DEBRIS) || world.getBlockState(pos.down()).isOf(Blocks.NETHERITE_BLOCK));
+    }
+
+    @Override
+    public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
+        return false;
+    }
+
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if ( world.isClient && hand == Hand.MAIN_HAND) {
+            ItemStack handItem = player.getHandItems().iterator().next();
+            // TODO make a custom bonemeal-like item/itemtag to grow it
+        }
+        return ActionResult.FAIL;
     }
 
     @Override
@@ -58,7 +65,7 @@ public class IronCropBlock extends CropBlock {
         int i;
         int lightLevel = world.getBaseLightLevel(pos, 0);
 
-        int speed = 5;
+        int speed = 20;
         // Speed up when light level belows or equals 7 which is hostile mobs' max spawn level.
         speed -= lightLevel <= 7 ? 2 : 0;
 

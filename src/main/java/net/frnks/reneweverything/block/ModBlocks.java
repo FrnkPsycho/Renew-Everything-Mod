@@ -15,7 +15,10 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
     public static final Block IRON_CROP_BLOCK = registerBlockWithoutItem("iron_crop_block", new IronCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
-
+    public static final Block COAL_CROP_BLOCK = registerBlockWithoutItem("coal_crop_block", new CoalCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+    public static final Block GOLD_CROP_BLOCK = registerBlockWithoutItem("gold_crop_block", new GoldCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+    public static final Block DIAMOND_CROP_BLOCK = registerBlockWithoutItem("diamond_crop_block", new DiamondCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+    public static final Block NETHERITE_CROP_BLOCK = registerBlockWithoutItem("netherite_crop_block", new NetheriteCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
     public static Block registerBlock(String name, Block block, ItemGroup itemGroup) {
         registerBlockItem(name, block, itemGroup);
         return Registry.register(Registries.BLOCK, new Identifier(RenewEverythingMod.MOD_ID, name), block);

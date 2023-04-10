@@ -16,10 +16,10 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "block": "reneweverything:iron_crop_block",
+                  "block": "reneweverything:coal_crop_block",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "age": "7"
+                    "age": "3"
                   }
                 }
               ],
@@ -34,11 +34,11 @@
                   "function": "minecraft:set_count"
                 }
               ],
-              "name": "minecraft:iron_nugget"
+              "name": "minecraft:coal"
             },
             {
               "type": "minecraft:item",
-              "name": "reneweverything:iron_seeds"
+              "name": "reneweverything:coal_seeds"
             }
           ]
         }
@@ -49,10 +49,10 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "reneweverything:iron_crop_block",
+          "block": "reneweverything:coal_crop_block",
           "condition": "minecraft:block_state_property",
           "properties": {
-            "age": "7"
+            "age": "3"
           }
         }
       ],
@@ -79,7 +79,7 @@
               }
             }
           ],
-          "name": "reneweverything:iron_seeds"
+          "name": "reneweverything:coal_seeds"
         }
       ],
       "rolls": 1.0

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "reneweverything:dirt_snack"
+    "reneweverything:dirt_snack",
+    "reneweverything:rock_snack"
   ]
 }

@@ -16,7 +16,7 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "block": "reneweverything:iron_crop_block",
+                  "block": "reneweverything:diamond_crop_block",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "age": "7"
@@ -28,17 +28,17 @@
                   "add": false,
                   "count": {
                     "type": "minecraft:uniform",
-                    "max": 2.0,
-                    "min": 1.0
+                    "max": 1.0,
+                    "min": 0.0
                   },
                   "function": "minecraft:set_count"
                 }
               ],
-              "name": "minecraft:iron_nugget"
+              "name": "minecraft:diamond"
             },
             {
               "type": "minecraft:item",
-              "name": "reneweverything:iron_seeds"
+              "name": "reneweverything:diamond_seeds"
             }
           ]
         }
@@ -49,7 +49,7 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "reneweverything:iron_crop_block",
+          "block": "reneweverything:diamond_crop_block",
           "condition": "minecraft:block_state_property",
           "properties": {
             "age": "7"
@@ -79,7 +79,7 @@
               }
             }
           ],
-          "name": "reneweverything:iron_seeds"
+          "name": "reneweverything:diamond_seeds"
         }
       ],
       "rolls": 1.0

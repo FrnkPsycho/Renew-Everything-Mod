@@ -3,7 +3,6 @@ package net.frnks.reneweverything.block;
 import net.frnks.reneweverything.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.item.ItemConvertible;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
@@ -11,7 +10,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldView;
 
-public class IronCropBlock extends CropBlock {
+public class GoldCropBlock extends CropBlock {
     private static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D),
@@ -23,13 +22,13 @@ public class IronCropBlock extends CropBlock {
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D)
     };
 
-    public IronCropBlock(Settings settings) {
+    public GoldCropBlock(Settings settings) {
         super(settings);
     }
 
     @Override
     protected ItemConvertible getSeedsItem() {
-        return ModItems.IRON_SEEDS;
+        return ModItems.GOLD_SEEDS;
     }
 
     @Override
@@ -50,7 +49,7 @@ public class IronCropBlock extends CropBlock {
 //    }
 //    @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        return !world.isSkyVisible(pos) && world.getBlockState(pos.down()).isOf(Blocks.IRON_BLOCK);
+        return !world.isSkyVisible(pos) && world.getBlockState(pos.down()).isOf(Blocks.GOLD_BLOCK);
     }
 
     @Override
@@ -58,7 +57,7 @@ public class IronCropBlock extends CropBlock {
         int i;
         int lightLevel = world.getBaseLightLevel(pos, 0);
 
-        int speed = 5;
+        int speed = 6;
         // Speed up when light level belows or equals 7 which is hostile mobs' max spawn level.
         speed -= lightLevel <= 7 ? 2 : 0;
 
