@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:dead_bush",
+    {
+      "id": "#minecraft:saplings",
+      "required": false
+    }
+  ]
+}

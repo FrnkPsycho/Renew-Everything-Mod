@@ -1,2 +1,5 @@
-// 1.19.4	2023-04-10T12:44:15.12736035	Renew Everything/Tags for minecraft:item
+// 1.19.4	2023-04-10T19:51:36.861817292	Renew Everything/Tags for minecraft:item
 a8d11b1837bc7d874f59adc0c9427a0d100a5052 data/reneweverything/tags/items/seed_source_foods.json
+a761fccdd5d6a8a90dd8c9d3479f63cca6e52f18 data/reneweverything/tags/items/dirt_snack_loots.json
+acca307ad50e9f7b25e1ed5ab806d248824bd230 data/reneweverything/tags/items/netherrack_snack_loots.json
+836c0f1973b1f0116bc264337efe8bc0f1f9362b data/reneweverything/tags/items/rock_snack_loots.json

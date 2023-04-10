@@ -1,10 +1,4 @@
 {
-  "type": "minecraft:block",
-  "functions": [
-    {
-      "function": "minecraft:explosion_decay"
-    }
-  ],
   "pools": [
     {
       "bonus_rolls": 0.0,
@@ -16,7 +10,7 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "block": "reneweverything:gold_crop_block",
+                  "block": "reneweverything:diamond_crop_block",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "age": "7"
@@ -34,11 +28,11 @@
                   "function": "minecraft:set_count"
                 }
               ],
-              "name": "minecraft:gold_nugget"
+              "name": "minecraft:diamond"
             },
             {
               "type": "minecraft:item",
-              "name": "reneweverything:gold_seeds"
+              "name": "reneweverything:diamond_seeds"
             }
           ]
         }
@@ -49,7 +43,7 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "reneweverything:gold_crop_block",
+          "block": "reneweverything:diamond_crop_block",
           "condition": "minecraft:block_state_property",
           "properties": {
             "age": "7"
@@ -79,7 +73,7 @@
               }
             }
           ],
-          "name": "reneweverything:gold_seeds"
+          "name": "reneweverything:diamond_seeds"
         }
       ],
       "rolls": 1.0

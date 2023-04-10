@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "reneweverything:coal_seeds",
+    "reneweverything:iron_seeds",
+    "reneweverything:gold_seeds",
+    "reneweverything:diamond_seeds"
+  ]
+}

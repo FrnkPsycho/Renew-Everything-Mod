@@ -27,49 +27,50 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        addDrop(ModBlocks.IRON_CROP_BLOCK, CustomCropDrops(ModBlocks.IRON_CROP_BLOCK, Items.IRON_NUGGET, ModItems.IRON_SEEDS,
-                1, 2,
-                BlockStatePropertyLootCondition.builder(ModBlocks.IRON_CROP_BLOCK)
-                        .properties(StatePredicate.Builder.create()
-                                .exactMatch(IntProperty.of("age", 0, 7), 7))));
 
-        addDrop(ModBlocks.COAL_CROP_BLOCK, CustomCropDrops(ModBlocks.COAL_CROP_BLOCK, Items.COAL, ModItems.COAL_SEEDS,
-                1, 2,
-                BlockStatePropertyLootCondition.builder(ModBlocks.COAL_CROP_BLOCK)
-                        .properties(StatePredicate.Builder.create()
-                                .exactMatch(IntProperty.of("age", 0, 3), 3))));
-
-        addDrop(ModBlocks.GOLD_CROP_BLOCK, CustomCropDrops(ModBlocks.GOLD_CROP_BLOCK, Items.GOLD_NUGGET, ModItems.GOLD_SEEDS,
-                1, 2,
-                BlockStatePropertyLootCondition.builder(ModBlocks.GOLD_CROP_BLOCK)
-                        .properties(StatePredicate.Builder.create()
-                                .exactMatch(IntProperty.of("age", 0, 7), 7))));
-
-        addDrop(ModBlocks.DIAMOND_CROP_BLOCK, CustomCropDrops(ModBlocks.DIAMOND_CROP_BLOCK, Items.DIAMOND, ModItems.DIAMOND_SEEDS,
-                0, 1,
-                BlockStatePropertyLootCondition.builder(ModBlocks.DIAMOND_CROP_BLOCK)
-                        .properties(StatePredicate.Builder.create()
-                                .exactMatch(IntProperty.of("age", 0, 7), 7))));
-
-        addDrop(ModBlocks.NETHERITE_CROP_BLOCK, CustomCropDrops(ModBlocks.NETHERITE_CROP_BLOCK, Items.NETHERITE_SCRAP, ModItems.NETHERITE_SEEDS,
-                0, 1,
-                BlockStatePropertyLootCondition.builder(ModBlocks.NETHERITE_CROP_BLOCK)
-                        .properties(StatePredicate.Builder.create()
-                                .exactMatch(IntProperty.of("age", 0, 7), 7))));
+//        addDrop(ModBlocks.IRON_CROP_BLOCK, CustomCropDrops(ModBlocks.IRON_CROP_BLOCK, Items.IRON_NUGGET, ModItems.IRON_SEEDS,
+//                1, 2,
+//                BlockStatePropertyLootCondition.builder(ModBlocks.IRON_CROP_BLOCK)
+//                        .properties(StatePredicate.Builder.create()
+//                                .exactMatch(IntProperty.of("age", 0, 7), 7))));
+//
+//        addDrop(ModBlocks.COAL_CROP_BLOCK, CustomCropDrops(ModBlocks.COAL_CROP_BLOCK, Items.COAL, ModItems.COAL_SEEDS,
+//                1, 2,
+//                BlockStatePropertyLootCondition.builder(ModBlocks.COAL_CROP_BLOCK)
+//                        .properties(StatePredicate.Builder.create()
+//                                .exactMatch(IntProperty.of("age", 0, 3), 3))));
+//
+//        addDrop(ModBlocks.GOLD_CROP_BLOCK, CustomCropDrops(ModBlocks.GOLD_CROP_BLOCK, Items.GOLD_NUGGET, ModItems.GOLD_SEEDS,
+//                1, 2,
+//                BlockStatePropertyLootCondition.builder(ModBlocks.GOLD_CROP_BLOCK)
+//                        .properties(StatePredicate.Builder.create()
+//                                .exactMatch(IntProperty.of("age", 0, 7), 7))));
+//
+//        addDrop(ModBlocks.DIAMOND_CROP_BLOCK, CustomCropDrops(ModBlocks.DIAMOND_CROP_BLOCK, Items.DIAMOND, ModItems.DIAMOND_SEEDS,
+//                0, 1,
+//                BlockStatePropertyLootCondition.builder(ModBlocks.DIAMOND_CROP_BLOCK)
+//                        .properties(StatePredicate.Builder.create()
+//                                .exactMatch(IntProperty.of("age", 0, 7), 7))));
+//
+//        addDrop(ModBlocks.NETHERITE_CROP_BLOCK, CustomCropDrops(ModBlocks.NETHERITE_CROP_BLOCK, Items.NETHERITE_SCRAP, ModItems.NETHERITE_SEEDS,
+//                0, 1,
+//                BlockStatePropertyLootCondition.builder(ModBlocks.NETHERITE_CROP_BLOCK)
+//                        .properties(StatePredicate.Builder.create()
+//                                .exactMatch(IntProperty.of("age", 0, 7), 7))));
     }
 
-    public LootTable.Builder CustomCropDrops(Block crop, Item product, Item seeds, float minProductDrop, float maxProductDrop, LootCondition.Builder condition) {
-        return this.applyExplosionDecay(crop, LootTable.builder()
-                .pool(LootPool.builder()
-                        .with((ItemEntry.builder(product)
-                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(minProductDrop, maxProductDrop)))
-                                .conditionally(condition))
-                                .alternatively(ItemEntry.builder(seeds))))
-                .pool(LootPool.builder()
-                        .conditionally(condition)
-                        .with(ItemEntry.builder(seeds)
-                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 3)))
-                                .apply(ApplyBonusLootFunction.binomialWithBonusCount(Enchantments.FORTUNE, 0.5714286f, 3)))));
-
-    }
+//    public LootTable.Builder CustomCropDrops(Block crop, Item product, Item seeds, float minProductDrop, float maxProductDrop, LootCondition.Builder condition) {
+//        return this.applyExplosionDecay(crop, LootTable.builder()
+//                .pool(LootPool.builder()
+//                        .with((ItemEntry.builder(product)
+//                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(minProductDrop, maxProductDrop)))
+//                                .conditionally(condition))
+//                                .alternatively(ItemEntry.builder(seeds))))
+//                .pool(LootPool.builder()
+//                        .conditionally(condition)
+//                        .with(ItemEntry.builder(seeds)
+//                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1, 3)))
+//                                .apply(ApplyBonusLootFunction.binomialWithBonusCount(Enchantments.FORTUNE, 0.5714286f, 3)))));
+//
+//    }
 }
