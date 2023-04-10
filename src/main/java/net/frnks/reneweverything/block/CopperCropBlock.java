@@ -19,7 +19,7 @@ public class CopperCropBlock extends CropBlock {
 
     @Override
     protected ItemConvertible getSeedsItem() {
-        return ModItems.IRON_SEEDS;
+        return ModItems.COPPER_SEEDS;
     }
 
     @Override

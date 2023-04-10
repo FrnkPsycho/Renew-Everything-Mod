@@ -1,4 +1,4 @@
-// 1.19.4	2023-04-10T21:00:37.779862994	Renew Everything/minecraft:generic Loot Table
+// 1.19.4	2023-04-10T21:17:51.628322298	Renew Everything/minecraft:generic Loot Table
 fa1521f46ac6f36324a1d5536532ae4c5495bb35 data/reneweverything/loot_tables/crops/gold_crop_loot.json
 386806d664f3401e4ebc47a537cbae03ed784114 data/reneweverything/loot_tables/crops/copper_crop_loot.json
 48851782dd1651a54ed22535a2c9d2316c4a15e3 data/reneweverything/loot_tables/crops/diamond_crop_loot.json
@@ -6,4 +6,4 @@ da5d0d8ce53b24f151c4a98dbed3f01fda5039e3 data/reneweverything/loot_tables/crops/
 f6411e9dbedcec20fafcb93e04079628eb7743c6 data/reneweverything/loot_tables/snacks/dirt_snack_loot.json
 1ca9645189dc83a5aae4f785f51f880bbd1e1419 data/reneweverything/loot_tables/crops/iron_crop_loot.json
 42b0ec368c09702ef929dd59373be758549c415d data/reneweverything/loot_tables/snacks/rock_snack_loot.json
-a662905fcf051b6cc84347072bff50d4f49a5a17 data/reneweverything/loot_tables/crops/coal_crop_loot.json
+0393b68efc3f152d273aca57a571914a4519af76 data/reneweverything/loot_tables/crops/coal_crop_loot.json

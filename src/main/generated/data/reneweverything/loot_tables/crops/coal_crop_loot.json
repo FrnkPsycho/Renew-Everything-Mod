@@ -13,7 +13,7 @@
                   "block": "reneweverything:coal_crop_block",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "age": "7"
+                    "age": "3"
                   }
                 }
               ],
@@ -46,7 +46,7 @@
           "block": "reneweverything:coal_crop_block",
           "condition": "minecraft:block_state_property",
           "properties": {
-            "age": "7"
+            "age": "3"
           }
         }
       ],

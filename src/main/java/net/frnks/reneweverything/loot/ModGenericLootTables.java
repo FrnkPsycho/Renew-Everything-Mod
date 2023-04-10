@@ -6,6 +6,7 @@ import net.frnks.reneweverything.RenewEverythingMod;
 import net.frnks.reneweverything.block.ModBlocks;
 import net.frnks.reneweverything.item.ModItems;
 import net.minecraft.block.Block;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -20,6 +21,8 @@ import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.StatePredicate;
 import net.minecraft.state.property.IntProperty;
+import net.minecraft.state.property.Properties;
+import net.minecraft.state.property.Property;
 import net.minecraft.util.Identifier;
 
 import java.util.function.BiConsumer;
@@ -53,27 +56,27 @@ public class ModGenericLootTables extends SimpleFabricLootTableProvider {
                 )
         );
         identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "crops/iron_crop_loot"),
-                OreCropDrops(ModBlocks.IRON_CROP_BLOCK, Items.IRON_NUGGET, ModItems.IRON_SEEDS, 1, 3));
+                OreCropDrops(ModBlocks.IRON_CROP_BLOCK, Items.IRON_NUGGET, ModItems.IRON_SEEDS,7, 1, 3));
 
         identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "crops/copper_crop_loot"),
-                OreCropDrops(ModBlocks.COPPER_CROP_BLOCK, ModItems.COPPER_NUGGET, ModItems.COPPER_SEEDS, 2, 5));
+                OreCropDrops(ModBlocks.COPPER_CROP_BLOCK, ModItems.COPPER_NUGGET, ModItems.COPPER_SEEDS, 7,2, 5));
 
         identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "crops/gold_crop_loot"),
-                OreCropDrops(ModBlocks.GOLD_CROP_BLOCK, Items.GOLD_NUGGET, ModItems.GOLD_SEEDS, 1,3));
+                OreCropDrops(ModBlocks.GOLD_CROP_BLOCK, Items.GOLD_NUGGET, ModItems.GOLD_SEEDS, 7,1,3));
 
         identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "crops/coal_crop_loot"),
-                OreCropDrops(ModBlocks.COAL_CROP_BLOCK, Items.COAL, ModItems.COAL_SEEDS, 1,2));
+                OreCropDrops(ModBlocks.COAL_CROP_BLOCK, Items.COAL, ModItems.COAL_SEEDS,3, 1,2));
 
         identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "crops/diamond_crop_loot"),
-                OreCropDrops(ModBlocks.DIAMOND_CROP_BLOCK, Items.DIAMOND, ModItems.DIAMOND_SEEDS, 1, 2));
+                OreCropDrops(ModBlocks.DIAMOND_CROP_BLOCK, Items.DIAMOND, ModItems.DIAMOND_SEEDS, 7, 1, 2));
 
         identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "crops/netherite_crop_loot"),
-                OreCropDrops(ModBlocks.NETHERITE_CROP_BLOCK, Items.NETHERITE_SCRAP, ModItems.NETHERITE_SEEDS, 1, 1));
+                OreCropDrops(ModBlocks.NETHERITE_CROP_BLOCK, Items.NETHERITE_SCRAP, ModItems.NETHERITE_SEEDS,7, 1, 1));
     }
 
-    public LootTable.Builder OreCropDrops(Block crop, Item product, Item seeds, float minProductDrop, float maxProductDrop) {
+    public LootTable.Builder OreCropDrops(Block crop, Item product, Item seeds, int maxAge,  float minProductDrop, float maxProductDrop) {
         LootCondition.Builder condition = BlockStatePropertyLootCondition.builder(crop)
-                .properties(StatePredicate.Builder.create().exactMatch(IntProperty.of("age", 0, 7), 7));
+                .properties(StatePredicate.Builder.create().exactMatch(IntProperty.of("age", 0, maxAge), maxAge));
         return LootTable.builder()
                 .pool(LootPool.builder()
                         .with((ItemEntry.builder(product)
