@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "reneweverything:block/iron_crop_block_stage0"
+  }
+}

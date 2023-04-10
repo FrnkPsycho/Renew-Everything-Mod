@@ -2,6 +2,9 @@ package net.frnks.reneweverything;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.frnks.reneweverything.block.ModBlocks;
+import net.frnks.reneweverything.entity.damage.ModDamageSources;
+import net.frnks.reneweverything.entity.damage.ModDamageTypes;
 import net.frnks.reneweverything.item.ModItems;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -19,8 +22,10 @@ public class RenewEverythingMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModDamageSources.load();
+		ModDamageTypes.load();
 		ModItems.load();
-
+		ModBlocks.load();
 		LOGGER.info("Hello Fabric world!");
 	}
 }
