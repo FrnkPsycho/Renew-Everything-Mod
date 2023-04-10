@@ -55,22 +55,22 @@ public class ModGenericLootTables extends SimpleFabricLootTableProvider {
                         // TODO more drops from rock snack
                 )
         );
-        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "crops/iron_crop_loot"),
+        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "blocks/iron_crop_block"),
                 OreCropDrops(ModBlocks.IRON_CROP_BLOCK, Items.IRON_NUGGET, ModItems.IRON_SEEDS,7, 1, 3));
 
-        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "crops/copper_crop_loot"),
+        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "blocks/copper_crop_block"),
                 OreCropDrops(ModBlocks.COPPER_CROP_BLOCK, ModItems.COPPER_NUGGET, ModItems.COPPER_SEEDS, 7,2, 5));
 
-        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "crops/gold_crop_loot"),
+        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "blocks/gold_crop_block"),
                 OreCropDrops(ModBlocks.GOLD_CROP_BLOCK, Items.GOLD_NUGGET, ModItems.GOLD_SEEDS, 7,1,3));
 
-        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "crops/coal_crop_loot"),
+        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "blocks/coal_crop_block"),
                 OreCropDrops(ModBlocks.COAL_CROP_BLOCK, Items.COAL, ModItems.COAL_SEEDS,3, 1,2));
 
-        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "crops/diamond_crop_loot"),
+        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "blocks/diamond_crop_block"),
                 OreCropDrops(ModBlocks.DIAMOND_CROP_BLOCK, Items.DIAMOND, ModItems.DIAMOND_SEEDS, 7, 1, 2));
 
-        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "crops/netherite_crop_loot"),
+        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "blocks/netherite_crop_block"),
                 OreCropDrops(ModBlocks.NETHERITE_CROP_BLOCK, Items.NETHERITE_SCRAP, ModItems.NETHERITE_SEEDS,7, 1, 1));
     }
 
