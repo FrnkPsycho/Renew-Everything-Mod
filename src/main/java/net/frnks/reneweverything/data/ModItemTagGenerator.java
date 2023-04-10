@@ -16,6 +16,7 @@ public class ModItemTagGenerator extends FabricTagProvider<Item> {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ModTagKeys.SEED_SOURCE_FOODS)
-                .add(ModItems.DIRT_SNACK);
+                .add(ModItems.DIRT_SNACK)
+                .add(ModItems.ROCK_SNACK);
     }
 }

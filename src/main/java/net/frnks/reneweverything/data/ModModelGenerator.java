@@ -1,5 +1,6 @@
 package net.frnks.reneweverything.data;
 
+import com.ibm.icu.text.Normalizer2;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.frnks.reneweverything.block.ModBlocks;
@@ -23,6 +24,7 @@ public class ModModelGenerator extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.DIRT_SNACK, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ROCK_SNACK, Models.GENERATED);
 //        itemModelGenerator.register(ModItems.IRON_SEEDS, Models.GENERATED);
 
     }
