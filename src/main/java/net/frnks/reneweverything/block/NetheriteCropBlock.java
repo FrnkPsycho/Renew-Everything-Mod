@@ -48,6 +48,7 @@ public class NetheriteCropBlock extends CropBlock {
 
     @Override
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
+        // Can't grow with vanilla bonemeal
         return false;
     }
 
@@ -56,6 +57,7 @@ public class NetheriteCropBlock extends CropBlock {
         if ( world.isClient && hand == Hand.MAIN_HAND) {
             ItemStack handItem = player.getHandItems().iterator().next();
             // TODO make a custom bonemeal-like item/itemtag to grow it
+
         }
         return ActionResult.FAIL;
     }

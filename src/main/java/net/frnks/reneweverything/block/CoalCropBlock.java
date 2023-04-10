@@ -17,9 +17,9 @@ public class CoalCropBlock extends CropBlock {
     public static final IntProperty AGE = Properties.AGE_3;
     private static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D),
+            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
     };
 
     public CoalCropBlock(Settings settings) {
@@ -27,7 +27,7 @@ public class CoalCropBlock extends CropBlock {
     }
     @Override
     public int getMaxAge() {
-        return 4;
+        return 3;
     }
     @Override
     public IntProperty getAgeProperty() {
