@@ -40,10 +40,8 @@ public class GeodeSnack extends Item {
             else if ( hungerManager.getFoodLevel() <= 0 ) {
                 player.damage(player.getDamageSources().generic(), 1f);
                 /*TODO make a custom damage sources*/
-//                player.damage(ModDamageSources.dirtSnack, 1f);
-//                player.damage(new DirtSnackDamageSource(world.getRegistryManager().get(RegistryKeys.DAMAGE_TYPE).entryOf(ModDamageTypes.DIRT_SNACK_DAMAGE)), 1f);
-//                player.damage(ModDamageSources.DIRT_SNACK, 1f);
             }
+
             if ( !world.isClient ) {
                 MinecraftServer server = world.getServer();
                 CommandManager commandManager = server.getCommandManager();
@@ -52,8 +50,6 @@ public class GeodeSnack extends Item {
                 ItemStack itemStack = ModLootGenerator.generateLootFromLootTable(lootTable, server);
                 player.giveItemStack(itemStack);
             }
-//            world.getServer().getCommandManager().executeWithPrefix(world.getServer().getCommandSource().withEntity(player), "/loot "+player.getName());
-//            commandManager.executeWithPrefix(server.getCommandSource().withEntity(player))
         }
         /* TODO give player seed item based on the loot table or else. */
         return super.finishUsing(stack, world, user);

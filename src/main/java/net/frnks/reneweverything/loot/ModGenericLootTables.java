@@ -35,7 +35,7 @@ public class ModGenericLootTables extends SimpleFabricLootTableProvider {
     public void accept(BiConsumer<Identifier, LootTable.Builder> identifierBuilderBiConsumer) {
         identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "snacks/dirt_snack_loot"), LootTable.builder()
                 .pool(LootPool.builder()
-                        .with(ItemEntry.builder(Items.DEAD_BUSH).weight(1))
+                        .with(ItemEntry.builder(Items.DEAD_BUSH).weight(5))
                         .with(ItemEntry.builder(Items.OAK_SAPLING).weight(100))
                         .with(ItemEntry.builder(Items.SPRUCE_SAPLING).weight(10))
                         .with(ItemEntry.builder(Items.BIRCH_SAPLING).weight(100))
@@ -47,12 +47,27 @@ public class ModGenericLootTables extends SimpleFabricLootTableProvider {
         );
         identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "snacks/rock_snack_loot"), LootTable.builder()
                 .pool(LootPool.builder()
-                        .with(ItemEntry.builder(ModItems.COAL_SEEDS).weight(200))
-                        .with(ItemEntry.builder(ModItems.IRON_SEEDS).weight(100))
-                        .with(ItemEntry.builder(ModItems.COPPER_SEEDS).weight(100))
-                        .with(ItemEntry.builder(ModItems.GOLD_SEEDS).weight(50))
-                        .with(ItemEntry.builder(ModItems.DIAMOND_SEEDS).weight(10))
+                        .with(ItemEntry.builder(ModItems.COAL_SEEDS).weight(100))
+                        .with(ItemEntry.builder(ModItems.IRON_SEEDS).weight(50))
+                        .with(ItemEntry.builder(ModItems.COPPER_SEEDS).weight(50))
+                        .with(ItemEntry.builder(ModItems.GOLD_SEEDS).weight(25))
+                        .with(ItemEntry.builder(ModItems.DIAMOND_SEEDS).weight(5))
                         // TODO more drops from rock snack
+                )
+        );
+        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "snacks/geode_snack_loot"), LootTable.builder()
+                .pool(LootPool.builder()
+                        .with(ItemEntry.builder(Items.AMETHYST_SHARD).weight(100))
+                        .with(ItemEntry.builder(Items.BUDDING_AMETHYST).weight(5))
+                        .with(ItemEntry.builder(Items.LARGE_AMETHYST_BUD).weight(10))
+                )
+        );
+        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "snacks/netherrack_snack_loot"), LootTable.builder()
+                .pool(LootPool.builder()
+                        .with(ItemEntry.builder(Items.QUARTZ).weight(200))
+                        .with(ItemEntry.builder(Items.NETHERITE_SCRAP).weight(10))
+                        .with(ItemEntry.builder(ModItems.NETHERITE_SEEDS).weight(1))
+                        .with(ItemEntry.builder(ModItems.QUARTZ_SEEDS).weight(50))
                 )
         );
         identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "blocks/iron_crop_block"),

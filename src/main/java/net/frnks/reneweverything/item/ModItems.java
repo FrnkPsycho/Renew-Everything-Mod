@@ -24,6 +24,7 @@ public class ModItems {
     public static final Item COPPER_SEEDS = register("copper_seeds", new AliasedBlockItem(ModBlocks.COPPER_CROP_BLOCK, new FabricItemSettings()), RenewEverythingMod.ITEM_GROUP);
     public static final Item GOLD_SEEDS = register("gold_seeds", new AliasedBlockItem(ModBlocks.GOLD_CROP_BLOCK, new FabricItemSettings()), RenewEverythingMod.ITEM_GROUP);
     public static final Item DIAMOND_SEEDS = register("diamond_seeds", new AliasedBlockItem(ModBlocks.DIAMOND_CROP_BLOCK, new FabricItemSettings()), RenewEverythingMod.ITEM_GROUP);
+    public static final Item QUARTZ_SEEDS = register("quartz_seeds", new AliasedBlockItem(ModBlocks.QUARTZ_CROP_BLOCK, new FabricItemSettings()), RenewEverythingMod.ITEM_GROUP);
     public static final Item NETHERITE_SEEDS = register("netherite_seeds", new AliasedBlockItem(ModBlocks.NETHERITE_CROP_BLOCK, new FabricItemSettings()), RenewEverythingMod.ITEM_GROUP);
     public static Item register(String name, Item item, ItemGroup itemGroup) {
         Item registeredItem = Registry.register(Registries.ITEM, new Identifier(RenewEverythingMod.MOD_ID, name), item);

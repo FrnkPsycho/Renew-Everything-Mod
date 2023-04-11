@@ -20,6 +20,7 @@ public class ModBlocks {
     public static final Block DIAMOND_CROP_BLOCK = registerBlockWithoutItem("diamond_crop_block", new DiamondCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
     public static final Block NETHERITE_CROP_BLOCK = registerBlockWithoutItem("netherite_crop_block", new NetheriteCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
     public static final Block COPPER_CROP_BLOCK = registerBlockWithoutItem("copper_crop_block", new CopperCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+    public static final Block QUARTZ_CROP_BLOCK = registerBlockWithoutItem("quartz_crop_block", new QuartzCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
     public static Block registerBlock(String name, Block block, ItemGroup itemGroup) {
         registerBlockItem(name, block, itemGroup);
         return Registry.register(Registries.BLOCK, new Identifier(RenewEverythingMod.MOD_ID, name), block);

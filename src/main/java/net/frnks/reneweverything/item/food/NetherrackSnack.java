@@ -37,8 +37,13 @@ public class NetherrackSnack extends Item {
         if ( user.isPlayer() ) {
             PlayerEntity player = (PlayerEntity) user;
             HungerManager hungerManager = player.getHungerManager();
-            hungerManager.setFoodLevel(hungerManager.getFoodLevel() - 1);
-            player.damage(player.getDamageSources().generic(), 1f);
+            if ( hungerManager.getFoodLevel() > 0 ) {
+                hungerManager.setFoodLevel(hungerManager.getFoodLevel() - 1);
+            }
+            else if ( hungerManager.getFoodLevel() <= 0 ) {
+                player.damage(player.getDamageSources().generic(), 1f);
+                /*TODO make a custom damage sources*/
+            }
             if ( world.getRandom().nextInt(4) == 0 ) player.setFireTicks(40);
                 /*TODO make a custom damage sources*/
 
