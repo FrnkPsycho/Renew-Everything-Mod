@@ -1,5 +1,6 @@
 package net.frnks.reneweverything.block;
 
+import net.frnks.reneweverything.data.GrowSpeedConstants;
 import net.frnks.reneweverything.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.item.ItemConvertible;
@@ -42,7 +43,7 @@ public class IronCropBlock extends CropBlock {
         int i;
         int lightLevel = world.getBaseLightLevel(pos, 0);
 
-        int speed = 5;
+        int speed = GrowSpeedConstants.FAST;
         // Speed up when light level belows or equals 7 which is hostile mobs' max spawn level.
         speed -= lightLevel <= 7 ? 2 : 0;
         if (world.getBlockState(pos.down()).isOf(Blocks.FARMLAND)) speed += 5;

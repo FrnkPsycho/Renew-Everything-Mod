@@ -1,5 +1,6 @@
 package net.frnks.reneweverything.block;
 
+import net.frnks.reneweverything.data.GrowSpeedConstants;
 import net.frnks.reneweverything.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,8 +12,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
@@ -63,7 +62,7 @@ public class DiamondCropBlock extends CropBlock {
         int i;
         int lightLevel = world.getBaseLightLevel(pos, 0);
 
-        int speed = 10;
+        int speed = GrowSpeedConstants.SLOW;
         // Speed up when light level belows or equals 7 which is hostile mobs' max spawn level.
         speed -= lightLevel <= 7 ? 2 : 0;
         if (world.getBlockState(pos.down()).isOf(Blocks.FARMLAND)) speed += 5;

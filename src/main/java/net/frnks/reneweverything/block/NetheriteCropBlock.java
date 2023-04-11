@@ -1,5 +1,6 @@
 package net.frnks.reneweverything.block;
 
+import net.frnks.reneweverything.data.GrowSpeedConstants;
 import net.frnks.reneweverything.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -67,10 +68,10 @@ public class NetheriteCropBlock extends CropBlock {
         int i;
         int lightLevel = world.getBaseLightLevel(pos, 0);
 
-        int speed = 20;
+        int speed = GrowSpeedConstants.SLOWEST;
         // Speed up when light level belows or equals 7 which is hostile mobs' max spawn level.
         speed -= lightLevel <= 7 ? 2 : 0;
-
+        if (world.getBlockState(pos.down()).isOf(Blocks.ANCIENT_DEBRIS)) speed += 2;
         if (world.getBlockState(pos.down()).isOf(Blocks.FARMLAND)) speed += 5;
 
         if ((i = this.getAge(state)) < this.getMaxAge() &&

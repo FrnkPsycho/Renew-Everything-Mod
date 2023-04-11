@@ -6,27 +6,27 @@
         {
           "type": "minecraft:item",
           "name": "reneweverything:coal_seeds",
-          "weight": 200
+          "weight": 100
         },
         {
           "type": "minecraft:item",
           "name": "reneweverything:iron_seeds",
-          "weight": 100
-        },
-        {
-          "type": "minecraft:item",
-          "name": "reneweverything:copper_seeds",
-          "weight": 100
-        },
-        {
-          "type": "minecraft:item",
-          "name": "reneweverything:gold_seeds",
           "weight": 50
         },
         {
           "type": "minecraft:item",
+          "name": "reneweverything:copper_seeds",
+          "weight": 50
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reneweverything:gold_seeds",
+          "weight": 25
+        },
+        {
+          "type": "minecraft:item",
           "name": "reneweverything:diamond_seeds",
-          "weight": 10
+          "weight": 5
         }
       ],
       "rolls": 1.0

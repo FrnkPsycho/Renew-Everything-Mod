@@ -5,7 +5,8 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:dead_bush"
+          "name": "minecraft:dead_bush",
+          "weight": 5
         },
         {
           "type": "minecraft:item",

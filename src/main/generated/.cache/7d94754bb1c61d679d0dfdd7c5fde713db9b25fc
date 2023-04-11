@@ -1,4 +1,4 @@
-// 1.19.4	2023-04-10T21:31:25.674638305	Renew Everything/Model Definitions
+// 1.19.4	2023-04-11T23:04:21.383977846	Renew Everything/Model Definitions
 e3dd041084f2430e7984b45e18300d40fc707ed2 assets/reneweverything/models/block/gold_crop_block_stage2.json
 2316ccd55f5732ded389b63068ee308f3b851f87 assets/reneweverything/models/block/copper_crop_block_stage4.json
 a01daaf3a83c6a192651686b2c08cf609859251a assets/reneweverything/models/item/coal_seeds.json
@@ -30,8 +30,8 @@ d50c7f9d92a48498bc8bf22a92146f2821841469 assets/reneweverything/models/block/cop
 7e312e1b45ea080b059eb20a2ae9ca5c60509a10 assets/reneweverything/models/block/netherite_crop_block_stage3.json
 22631cdf257a98953907afcfe103732c68b0eccc assets/reneweverything/models/block/diamond_crop_block_stage7.json
 27ad8978abc0668d1954756c33758d3e85bb886d assets/reneweverything/models/block/gold_crop_block_stage5.json
-801ab55257192d4690a962d130e13e1d6402778e assets/reneweverything/models/block/netherite_crop_block_stage2.json
 660e61a084a4820855b0ce52faad003053eaec12 assets/reneweverything/models/block/diamond_crop_block_stage4.json
+801ab55257192d4690a962d130e13e1d6402778e assets/reneweverything/models/block/netherite_crop_block_stage2.json
 673d890e4549cf6d139c03782fc1f0ea04864a9b assets/reneweverything/models/block/copper_crop_block_stage1.json
 6e69a53127510e14ca4063555da60081b2c5434c assets/reneweverything/models/block/coal_crop_block_stage1.json
 b2f904183acbe5bd4a2c8277faff67e9a109aaca assets/reneweverything/models/block/gold_crop_block_stage0.json

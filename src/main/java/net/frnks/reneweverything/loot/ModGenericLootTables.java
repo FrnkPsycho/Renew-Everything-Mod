@@ -59,14 +59,14 @@ public class ModGenericLootTables extends SimpleFabricLootTableProvider {
                 .pool(LootPool.builder()
                         .with(ItemEntry.builder(Items.AMETHYST_SHARD).weight(100))
                         .with(ItemEntry.builder(Items.BUDDING_AMETHYST).weight(5))
-                        .with(ItemEntry.builder(Items.LARGE_AMETHYST_BUD).weight(10))
+                        .with(ItemEntry.builder(Items.AMETHYST_CLUSTER).weight(10))
                 )
         );
         identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "snacks/netherrack_snack_loot"), LootTable.builder()
                 .pool(LootPool.builder()
                         .with(ItemEntry.builder(Items.QUARTZ).weight(200))
                         .with(ItemEntry.builder(Items.NETHERITE_SCRAP).weight(10))
-                        .with(ItemEntry.builder(ModItems.NETHERITE_SEEDS).weight(1))
+                        .with(ItemEntry.builder(ModItems.NETHERITE_SEEDS).weight(5))
                         .with(ItemEntry.builder(ModItems.QUARTZ_SEEDS).weight(50))
                 )
         );
@@ -87,6 +87,16 @@ public class ModGenericLootTables extends SimpleFabricLootTableProvider {
 
         identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "blocks/netherite_crop_block"),
                 OreCropDrops(ModBlocks.NETHERITE_CROP_BLOCK, Items.NETHERITE_SCRAP, ModItems.NETHERITE_SEEDS,7, 1, 1));
+
+        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "blocks/quartz_crop_block"),
+                OreCropDrops(ModBlocks.QUARTZ_CROP_BLOCK, Items.QUARTZ, ModItems.QUARTZ_SEEDS,7, 2, 4));
+
+        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "blocks/emerald_crop_block"),
+                OreCropDrops(ModBlocks.EMERALD_CROP_BLOCK, Items.EMERALD, ModItems.EMERALD_SEEDS,7, 1, 1));
+
+        identifierBuilderBiConsumer.accept(new Identifier(RenewEverythingMod.MOD_ID, "blocks/lapis_lazuli_crop_block"),
+                OreCropDrops(ModBlocks.LAPIS_LAZULI_CROP_BLOCK, Items.LAPIS_LAZULI, ModItems.LAPIS_LAZULI_SEEDS,7, 2, 4));
+
     }
 
     public LootTable.Builder OreCropDrops(Block crop, Item product, Item seeds, int maxAge,  float minProductDrop, float maxProductDrop) {
